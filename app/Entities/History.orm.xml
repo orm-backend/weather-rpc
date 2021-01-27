@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xs:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<entity name="App\Entities\History" table="history" repository-class="App\Repositories\HistoryRepository">
+		<cache usage="NONSTRICT_READ_WRITE" />
+		<unique-constraints>
+			<unique-constraint name="date_at_unique" columns="date_at" />
+		</unique-constraints>
+		<field name="temp" type="decimal" column="temp" nullable="false" precision="3" scale="1" />
+		<field name="dateAt" type="date" column="date_at" nullable="false" />
+	</entity>
+</doctrine-mapping>
